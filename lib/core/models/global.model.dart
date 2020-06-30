@@ -1,22 +1,3 @@
-class Country {
-  Global global;
-
-  Country({this.global});
-
-  Country.fromJson(Map<String, dynamic> json) {
-    global =
-        json['Global'] != null ? new Global.fromJson(json['Global']) : null;
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.global != null) {
-      data['Global'] = this.global.toJson();
-    }
-    return data;
-  }
-}
-
 class Global {
   int newConfirmed;
   int totalConfirmed;
