@@ -10,12 +10,23 @@ import 'package:charts_flutter/flutter.dart' as charts;
 class AppProvider extends ChangeNotifier {
   List<Country> _listCountries = [];
   GlobalSummary globalSummary;
+  GlobalSummary globalNewSummary;
   bool sortConfirmed = false;
   bool isSorted = false;
 
-  var globalSeries = [
+  var globalSerie = [
     charts.Series<GlobalStatistics, String>(
-      id: 'Clicks',
+      id: 'Total Summary',
+      domainFn: (GlobalStatistics globalStatistics, _) => globalStatistics.type,
+      measureFn: (GlobalStatistics globalStatistics, _) =>
+          globalStatistics.numbers,
+      colorFn: (GlobalStatistics globalStatistics, _) => globalStatistics.color,
+      data: <GlobalStatistics>[],
+    ),
+  ];
+  var globalNewSerie = [
+    charts.Series<GlobalStatistics, String>(
+      id: 'New Summary',
       domainFn: (GlobalStatistics globalStatistics, _) => globalStatistics.type,
       measureFn: (GlobalStatistics globalStatistics, _) =>
           globalStatistics.numbers,
@@ -34,19 +45,34 @@ class AppProvider extends ChangeNotifier {
 
     globalSummary = GlobalSummary.fromJson(resp['Global']);
 
-    globalSeries[0].data.addAll([
+    globalSerie[0].data.addAll([
       GlobalStatistics(
-          color: Colors.red,
+          color: Colors.orange.withOpacity(0.75),
           numbers: globalSummary.totalConfirmed,
-          type: 'Confirmed'),
+          type: 'Total Confirmed'),
       GlobalStatistics(
-          color: Colors.blue,
+          color: Colors.deepOrange.withOpacity(0.75),
           numbers: globalSummary.totalDeaths,
-          type: 'Deaths'),
+          type: 'Total Deaths'),
       GlobalStatistics(
-          color: Colors.green,
+          color: Colors.lightGreen.withOpacity(0.75),
           numbers: globalSummary.totalRecovered,
-          type: 'Recovered')
+          type: 'Total Recovered')
+    ]);
+
+    globalNewSerie[0].data.addAll([
+      GlobalStatistics(
+          color: Colors.orange.withOpacity(0.75),
+          numbers: globalSummary.newConfirmed,
+          type: 'NewConfirmed'),
+      GlobalStatistics(
+          color: Colors.deepOrange.withOpacity(0.75),
+          numbers: globalSummary.newDeaths,
+          type: 'NewDeaths'),
+      GlobalStatistics(
+          color: Colors.lightGreen.withOpacity(0.75),
+          numbers: globalSummary.newRecovered,
+          type: 'NewRecovered')
     ]);
     notifyListeners();
   }
