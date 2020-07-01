@@ -15,7 +15,6 @@ class _SortButtonState extends State<SortButton> with TickerProviderStateMixin {
   AnimationController controller;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     controller = AnimationController(
         duration: Duration(
@@ -42,10 +41,8 @@ class _SortButtonState extends State<SortButton> with TickerProviderStateMixin {
                   )
                 : SizedBox(
                     height: 0,
-                    width: 0,
+                    width: 24,
                   )
-
-            // Icon(Icons.sort),
           ],
         ),
         onPressed: () {
