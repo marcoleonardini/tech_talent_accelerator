@@ -48,9 +48,10 @@ class HomePage extends StatelessWidget {
               children: <Widget>[
                 Expanded(
                   child: TabBarView(
+                    physics: BouncingScrollPhysics(),
                     children: <Widget>[
                       const CountriesContent(),
-                      GlobalContent()
+                      const GlobalContent()
                     ],
                   ),
                 ),

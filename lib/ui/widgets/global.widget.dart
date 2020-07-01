@@ -5,6 +5,7 @@ import 'package:tech_talent_accelerator/core/providers/app.provider.dart';
 import 'package:tech_talent_accelerator/ui/widgets/label_indicator.widget.dart';
 
 class GlobalContent extends StatelessWidget {
+  const GlobalContent();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,7 +22,6 @@ class GlobalContent extends StatelessWidget {
               style: Theme.of(context).textTheme.headline4,
             ),
             Row(
-              // mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 LabelIndicator(
@@ -72,7 +72,6 @@ class GlobalContent extends StatelessWidget {
               style: Theme.of(context).textTheme.headline4,
             ),
             Row(
-              // mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 LabelIndicator(

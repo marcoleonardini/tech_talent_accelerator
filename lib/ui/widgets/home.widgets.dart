@@ -8,20 +8,19 @@ class CountriesContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('Building Contries Content');
     return Column(
       children: <Widget>[
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             Expanded(
-              // width: 128.0,
               child: Text(
                 'Country',
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.headline6,
               ),
             ),
-            // Spacer(),
             SortButton(),
           ],
         ),
