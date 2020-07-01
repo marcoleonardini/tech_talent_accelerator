@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tech_talent_accelerator/core/providers/app.provider.dart';
+import 'package:tech_talent_accelerator/ui/widgets/buttons.widgets.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -28,15 +29,8 @@ class HomePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     Text('Country'),
-                    FlatButton(
-                      child: Row(
-                        children: <Widget>[Text('Confirmed'), Icon(Icons.sort)],
-                      ),
-                      onPressed: () {
-                        Provider.of<AppProvider>(context, listen: false)
-                            .sortContries();
-                      },
-                    )
+                    Spacer(),
+                    SortButton(),
                   ],
                 ),
                 Expanded(

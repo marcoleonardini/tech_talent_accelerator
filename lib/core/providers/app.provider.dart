@@ -7,6 +7,7 @@ import 'package:tech_talent_accelerator/core/services/covid.service.dart';
 class AppProvider extends ChangeNotifier {
   List<Country> _listCountries = [];
   bool sortConfirmed = false;
+  bool isSorted = false;
 
   void loadCountries() async {
     _listCountries = await CovidService().getCountries();
@@ -14,6 +15,7 @@ class AppProvider extends ChangeNotifier {
   }
 
   void sortContries() async {
+    isSorted = true;
     _listCountries.sort((a, b) => a.totalConfirmed.compareTo(b.totalConfirmed));
     if (sortConfirmed) _listCountries = _listCountries.reversed.toList();
     sortConfirmed = !sortConfirmed;
