@@ -46,21 +46,6 @@ class HomePage extends StatelessWidget {
             ),
             child: Column(
               children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    Expanded(
-                      // width: 128.0,
-                      child: Text(
-                        'Country',
-                        textAlign: TextAlign.center,
-                        style: Theme.of(context).textTheme.headline6,
-                      ),
-                    ),
-                    // Spacer(),
-                    SortButton(),
-                  ],
-                ),
                 Expanded(
                   child: TabBarView(
                     children: <Widget>[
