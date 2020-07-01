@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tech_talent_accelerator/ui/widgets/buttons.widgets.dart';
+import 'package:tech_talent_accelerator/ui/widgets/circle_tab_indicator.dart';
 import 'package:tech_talent_accelerator/ui/widgets/home.widgets.dart';
 
 class HomePage extends StatelessWidget {
@@ -18,6 +19,11 @@ class HomePage extends StatelessWidget {
             ),
           ),
           bottomNavigationBar: TabBar(
+            labelStyle: Theme.of(context).textTheme.headline5,
+            labelColor: Colors.black87,
+            unselectedLabelColor: Colors.black38,
+            labelPadding: EdgeInsets.only(bottom: 12.0),
+            indicator: CircleTabIndicator(radius: 5, color: Colors.blue),
             tabs: <Widget>[
               const Text('Countries'),
               const Text('Global'),
