@@ -10,14 +10,15 @@ class HomePage extends StatelessWidget {
         length: 2,
         child: Scaffold(
           appBar: AppBar(
-            title: const Text('Covid App'),
-            centerTitle: true,
-            bottom: TabBar(
-              tabs: <Widget>[
-                const Text('Countries'),
-                const Text('Global'),
-              ],
+            title: const Text(
+              'Covid App',
             ),
+          ),
+          bottomNavigationBar: TabBar(
+            tabs: <Widget>[
+              const Text('Countries'),
+              const Text('Global'),
+            ],
           ),
           body: Container(
             constraints: BoxConstraints.expand(),
