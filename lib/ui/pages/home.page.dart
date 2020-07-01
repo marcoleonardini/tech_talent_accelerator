@@ -10,8 +10,11 @@ class HomePage extends StatelessWidget {
         length: 2,
         child: Scaffold(
           appBar: AppBar(
-            title: const Text(
+            backgroundColor: Colors.white,
+            centerTitle: true,
+            title: Text(
               'Covid App',
+              style: Theme.of(context).textTheme.headline5,
             ),
           ),
           bottomNavigationBar: TabBar(
@@ -22,13 +25,33 @@ class HomePage extends StatelessWidget {
           ),
           body: Container(
             constraints: BoxConstraints.expand(),
+            padding: EdgeInsets.all(16.0),
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                colorFilter: ColorFilter.mode(
+                  Colors.white.withOpacity(0.1),
+                  BlendMode.dstATop,
+                ),
+                fit: BoxFit.fitWidth,
+                image: AssetImage(
+                  'images/who.png',
+                ),
+              ),
+            ),
             child: Column(
               children: <Widget>[
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
-                    Text('Country'),
-                    Spacer(),
+                    Expanded(
+                      // width: 128.0,
+                      child: Text(
+                        'Country',
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.headline6,
+                      ),
+                    ),
+                    // Spacer(),
                     SortButton(),
                   ],
                 ),

@@ -33,11 +33,14 @@ class _SortButtonState extends State<SortButton> with TickerProviderStateMixin {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: <Widget>[
-            Text('Confirmed'),
+            Text(
+              'Confirmed',
+              style: Theme.of(context).textTheme.headline6,
+            ),
             Provider.of<AppProvider>(context).isSorted
                 ? RotationTransition(
                     turns: controller,
-                    child: Icon(Icons.arrow_drop_up),
+                    child: const Icon(Icons.arrow_drop_up),
                   )
                 : SizedBox(
                     height: 0,
