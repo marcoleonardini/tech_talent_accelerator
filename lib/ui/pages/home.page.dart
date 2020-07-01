@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tech_talent_accelerator/ui/widgets/buttons.widgets.dart';
 import 'package:tech_talent_accelerator/ui/widgets/circle_tab_indicator.dart';
+import 'package:tech_talent_accelerator/ui/widgets/global.widget.dart';
 import 'package:tech_talent_accelerator/ui/widgets/home.widgets.dart';
 
 class HomePage extends StatelessWidget {
@@ -50,9 +50,7 @@ class HomePage extends StatelessWidget {
                   child: TabBarView(
                     children: <Widget>[
                       const CountriesContent(),
-                      FlutterLogo(
-                        colors: Colors.green,
-                      ),
+                      GlobalContent()
                     ],
                   ),
                 ),

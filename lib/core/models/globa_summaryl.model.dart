@@ -1,4 +1,8 @@
-class Global {
+import 'dart:ui';
+
+import 'package:charts_flutter/flutter.dart' as charts;
+
+class GlobalSummary {
   int newConfirmed;
   int totalConfirmed;
   int newDeaths;
@@ -6,7 +10,7 @@ class Global {
   int newRecovered;
   int totalRecovered;
 
-  Global({
+  GlobalSummary({
     this.newConfirmed,
     this.totalConfirmed,
     this.newDeaths,
@@ -15,7 +19,7 @@ class Global {
     this.totalRecovered,
   });
 
-  Global.fromJson(Map<String, dynamic> json) {
+  GlobalSummary.fromJson(Map<String, dynamic> json) {
     newConfirmed = json['NewConfirmed'];
     totalConfirmed = json['TotalConfirmed'];
     newDeaths = json['NewDeaths'];
@@ -34,4 +38,14 @@ class Global {
     data['TotalRecovered'] = this.totalRecovered;
     return data;
   }
+}
+
+class GlobalStatistics {
+  final String type;
+  final int numbers;
+  final charts.Color color;
+
+  GlobalStatistics({this.type, this.numbers, Color color})
+      : this.color = charts.Color(
+            r: color.red, g: color.green, b: color.blue, a: color.alpha);
 }

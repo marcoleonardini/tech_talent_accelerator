@@ -37,7 +37,7 @@ class Country {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['Country'] = this.country;
     data['CountryCode'] = this.countryCode;
     data['Slug'] = this.slug;

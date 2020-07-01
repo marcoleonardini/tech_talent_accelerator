@@ -38,7 +38,9 @@ class CountriesContent extends StatelessWidget {
                   final country = _listContry[index];
                   return ListTile(
                     title: Text(country.country),
-                    trailing: Text(country.totalConfirmed.toString()),
+                    trailing: Text(
+                      country.totalConfirmed.toString(),
+                    ),
                   );
                 },
               );

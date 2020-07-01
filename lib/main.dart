@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<AppProvider>(
-      create: (_) => AppProvider()..loadCountries(),
+      create: (_) => AppProvider()..loadSummary(),
       builder: (context, __) => MaterialApp(
         title: 'App Covid 19',
         theme: ThemeData(
