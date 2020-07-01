@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tech_talent_accelerator/core/models/country.model.dart';
-import 'package:tech_talent_accelerator/core/services/covid.service.dart';
+import 'package:provider/provider.dart';
+import 'package:tech_talent_accelerator/core/providers/app.provider.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -28,7 +28,15 @@ class HomePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
                     Text('Country'),
-                    Icon(Icons.sort),
+                    FlatButton(
+                      child: Row(
+                        children: <Widget>[Text('Confirmed'), Icon(Icons.sort)],
+                      ),
+                      onPressed: () {
+                        Provider.of<AppProvider>(context, listen: false)
+                            .sortContries();
+                      },
+                    )
                   ],
                 ),
                 Expanded(
@@ -55,13 +63,14 @@ class CountriesContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<List<Country>>(
-      future: CovidService().getCountries(),
-      builder: (context, snapshot) {
-        if (!snapshot.hasData) return CircularProgressIndicator();
-        final _listContry = snapshot.data;
+    return Consumer<AppProvider>(
+      builder: (context, AppProvider appProvider, __) {
+        if (appProvider.listCountries.isEmpty)
+          return CircularProgressIndicator();
+        final _listContry = appProvider.listCountries;
         return ListView.builder(
-          itemCount: snapshot.data.length,
+          reverse: false,
+          itemCount: _listContry.length,
           itemBuilder: (context, index) {
             final country = _listContry[index];
             return ListTile(
