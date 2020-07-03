@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tech_talent_accelerator/ui/widgets/circle_tab_indicator.dart';
+import 'package:tech_talent_accelerator/ui/widgets/countries.widgets.dart';
 import 'package:tech_talent_accelerator/ui/widgets/global.widget.dart';
-import 'package:tech_talent_accelerator/ui/widgets/home.widgets.dart';
 
 class HomePage extends StatelessWidget {
   @override

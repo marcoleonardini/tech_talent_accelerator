@@ -12,21 +12,21 @@ class LabelIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         Row(
           children: <Widget>[
             CircleAvatar(
               backgroundColor: color,
-              maxRadius: 6,
+              maxRadius: 4,
             ),
             SizedBox(
               width: 8.0,
             ),
-            Text(title),
+            Text('$value')
           ],
         ),
-        Text('$value')
+        Text(title),
       ],
     );
   }
