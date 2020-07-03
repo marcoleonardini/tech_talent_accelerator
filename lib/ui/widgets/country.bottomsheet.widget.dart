@@ -34,11 +34,6 @@ class CountryBottomSheetWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               LabelIndicator(
-                title: 'Confirmed',
-                color: Colors.orange,
-                value: country.totalConfirmed,
-              ),
-              LabelIndicator(
                 title: 'Recovered',
                 color: Colors.lightGreen,
                 value: country.totalRecovered,
@@ -47,6 +42,11 @@ class CountryBottomSheetWidget extends StatelessWidget {
                 title: 'Deaths',
                 color: Colors.deepOrange,
                 value: country.totalDeaths,
+              ),
+              LabelIndicator(
+                title: 'Confirmed',
+                color: Colors.orange,
+                value: country.totalConfirmed,
               ),
             ],
           ),
@@ -58,11 +58,6 @@ class CountryBottomSheetWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               LabelIndicator(
-                title: 'Confirmed',
-                color: Colors.orange,
-                value: country.newConfirmed,
-              ),
-              LabelIndicator(
                 title: 'Recovered',
                 color: Colors.lightGreen,
                 value: country.newRecovered,
@@ -71,6 +66,11 @@ class CountryBottomSheetWidget extends StatelessWidget {
                 title: 'Deaths',
                 color: Colors.deepOrange,
                 value: country.newDeaths,
+              ),
+              LabelIndicator(
+                title: 'Confirmed',
+                color: Colors.orange,
+                value: country.newConfirmed,
               ),
             ],
           ),

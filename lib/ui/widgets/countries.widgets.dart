@@ -33,6 +33,7 @@ class CountriesContent extends StatelessWidget {
                 return Center(child: CircularProgressIndicator());
               final _listContry = appProvider.listCountries;
               return ListView.separated(
+                physics: BouncingScrollPhysics(),
                 reverse: false,
                 itemCount: _listContry.length,
                 separatorBuilder: (context, index) => Divider(),
@@ -85,17 +86,17 @@ class SubtitleCountry extends StatelessWidget {
         LabelIndicator(
           title: 'Recovered',
           color: Colors.lightGreen,
-          value: country.newRecovered,
+          value: country.totalRecovered,
         ),
         LabelIndicator(
           title: 'Deaths',
           color: Colors.deepOrange,
-          value: country.newDeaths,
+          value: country.totalDeaths,
         ),
         LabelIndicator(
           title: 'Confirmed',
           color: Colors.orange,
-          value: country.newConfirmed,
+          value: country.totalConfirmed,
         ),
       ],
     );
