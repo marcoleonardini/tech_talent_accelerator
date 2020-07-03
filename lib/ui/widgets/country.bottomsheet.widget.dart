@@ -20,6 +20,7 @@ class CountryBottomSheetWidget extends StatelessWidget {
           Text(
             country.country,
             style: Theme.of(context).textTheme.headline4,
+            textAlign: TextAlign.center,
           ),
           Text(
             formattedDate,
