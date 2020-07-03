@@ -1,6 +1,5 @@
 # tech_talent_accelerator
 
-A new Flutter project.
 
 ## Getting Started
 
@@ -21,3 +20,29 @@ mundiales totales.
 
 El equipo esta acostumbrado a usar como gestor de estado
 Provider, por lo que te pide que lo uses en algún lado.
+
+## APK
+
+https://github.com/marcoleonardini/tech_talent_accelerator/blob/master/apk/app.apk
+
+
+## Flutter Info
+
+Flutter Version: 1.17.5
+Channel: Stable
+
+## Packages Used 
+  http: ^0.12.1
+  
+  provider: ^4.1.3
+  
+  charts_flutter: ^0.9.0
+  
+  intl: ^0.16.1
+
+## Screen Shots
+
+![Final App](https://github.com/marcoleonardini/tech_talent_accelerator/blob/master/screenshots/home.png)
+![Final App](https://github.com/marcoleonardini/tech_talent_accelerator/blob/master/screenshots/home_sorted.png)
+![Final App](https://github.com/marcoleonardini/tech_talent_accelerator/blob/master/screenshots/country_detail.png)
+![Final App](https://github.com/marcoleonardini/tech_talent_accelerator/blob/master/screenshots/global.png)
