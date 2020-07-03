@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
           ),
           body: Container(
             constraints: BoxConstraints.expand(),
-            padding: EdgeInsets.all(12.0),
+            padding: EdgeInsets.all(16.0),
             decoration: BoxDecoration(
               image: DecorationImage(
                 colorFilter: ColorFilter.mode(

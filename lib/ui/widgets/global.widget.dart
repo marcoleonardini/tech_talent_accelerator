@@ -17,9 +17,12 @@ class GlobalContent extends StatelessWidget {
               height: 12.0,
             ),
             Text(
-              'Global Summary',
+              'Global Total Summary',
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.headline4,
+            ),
+            SizedBox(
+              height: 12.0,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -70,6 +73,9 @@ class GlobalContent extends StatelessWidget {
               'Global Today New Summary',
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.headline4,
+            ),
+            SizedBox(
+              height: 12.0,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,

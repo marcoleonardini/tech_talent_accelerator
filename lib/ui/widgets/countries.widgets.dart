@@ -32,12 +32,14 @@ class CountriesContent extends StatelessWidget {
               if (appProvider.listCountries.isEmpty)
                 return Center(child: CircularProgressIndicator());
               final _listContry = appProvider.listCountries;
-              return ListView.builder(
+              return ListView.separated(
                 reverse: false,
                 itemCount: _listContry.length,
+                separatorBuilder: (context, index) => Divider(),
                 itemBuilder: (context, index) {
                   final country = _listContry[index];
                   return ListTile(
+                    contentPadding: EdgeInsets.all(4.0),
                     onTap: () {
                       showModalBottomSheet(
                           context: context,
@@ -46,8 +48,16 @@ class CountriesContent extends StatelessWidget {
                           builder: (context) =>
                               CountryBottomSheetWidget(country: country));
                     },
-                    title: Text(country.country),
-                    subtitle: SubtitleCountry(country: country),
+                    title: Text(
+                      country.country,
+                      style: TextStyle(
+                        fontSize: 16.0,
+                      ),
+                    ),
+                    subtitle: Padding(
+                      padding: const EdgeInsets.only(top: 6),
+                      child: SubtitleCountry(country: country),
+                    ),
                   );
                 },
               );
@@ -70,7 +80,7 @@ class SubtitleCountry extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         LabelIndicator(
           title: 'Recovered',
